@@ -42,19 +42,19 @@
       </th>
     </tr>
   <% @dengon_data.each do |key,obj| %>
-  <tr>
-    <td class="msg">
-      <%= obj['msg'] %>
-      </td>
-    <td class="name">
-      <%= obj['name'] %>
-      </td>
-    <td class="mail">
-      <%= obj['mail'] %>
-      </td>
-    <td class="time">
-      <%= Time.at(key.to_i) %>
-      </td>
-    </tr>
-  <% end &>
+    <tr>
+      <td class="msg">
+        <%= obj['msg'] %>
+        </td>
+      <td class="name">
+        <%= obj['name'] %>
+        </td>
+      <td class="mail">
+        <%= obj['mail'] %>
+        </td>
+      <td class="time">
+        <%= Time.at(key.to_i) %>
+        </td>
+      </tr>
+  <% end %>
   </table>
