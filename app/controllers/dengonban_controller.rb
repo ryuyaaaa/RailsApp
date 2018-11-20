@@ -6,7 +6,7 @@ class DengonbanController < ApplicationController
     begin
       @dengon_data = JSON.parse(File.read("data.txt"))
     rescue
-      @dengon_data = Hash.New
+      @dengon_data = Hash.new
     end
     @dengon_data.each do |key, obj|
       if Time.now.to_i - key.to_i > 24*60*60 then
@@ -22,6 +22,7 @@ class DengonbanController < ApplicationController
       @dengon_data[Time.now.to_i] = obj
       data = @dengon_data.to_json
       File.write("data.txt", data)
+      @dengon_data = JSON.parse(data)
     end
   end
 end
